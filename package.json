@@ -1,0 +1,17 @@
+{
+  "name": "hinario",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "chalk": "^5.4.1",
+    "node-fetch": "^3.3.2",
+    "node-html-parser": "^7.0.1"
+  }
+}
