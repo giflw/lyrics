@@ -76,9 +76,11 @@ for (const discografia of discografias) {
         const title = `${String(song.number).padStart(3, '0')} - ${song.name}`
         console.log(chalk.blueBright(title))
 
-        const letra = (await getHtml(songs[0].url)).querySelectorAll('.lyric-original p').map(p => p.text.trim()).join("\n\n")
+        const html = await getHtml(song.url)
+        const letra = html.querySelectorAll('.lyric-original p').map(p => p.text.trim()).join("\n\n")
+        //const videId = html.querySelector('.proxy-player').getAttribute("src").split("video_id=")[1]
 
-        fs.writeFileSync(path.join(letrasDir, title.replaceAll(" ", "_") + '.txt'), title + "\n\n" + letra)
+        fs.writeFileSync(path.join(letrasDir, title.replaceAll(" ", "_") + '.txt'), title + /*"\n\n" + videId +*/ "\n\n" + letra)
     }
 }
 
